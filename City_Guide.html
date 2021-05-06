@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Afyonkarahisar Tur Rehberi</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+crossorigin=""></script>
+<style>
+	body { margin: 0; padding: 0; }
+	#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+</style>
+</head>
+<body>
+<style>
+    #map {
+        position: fixed;
+        width: 50%;
+    }
+    #features {
+        width: 50%;
+        margin-left: 50%;
+        font-family: sans-serif;
+        overflow-y: scroll;
+        background-color: #fafafa;
+    }
+    section {
+        padding: 25px 50px;
+        line-height: 25px;
+        border-bottom: 1px solid #ddd;
+        opacity: 0.25;
+        font-size: 13px;
+    }
+    section.active {
+        opacity: 1;
+    }
+    section:last-child {
+        border-bottom: none;
+        margin-bottom: 200px;
+    }
+</style>
+
+<div id="map"></div>
+<div id="features">
+    <section id="merkez" class="active">
+        <h3>Afyonkarahisar</h3>
+        <p>
+            Afyonkarahisar Ege Bölgesinin İç Batı Anadolu bölümü sınırları içerisinde yer alır.
+Kuzeyde Eskişehir, kuzeybatıda Kütahya, doğuda Konya, batıda Uşak, güneyde Burdur,
+güneydoğuda Isparta, güneybatıda ise Denizli illeri ile komşudur.
+        </p>
+        <p>
+            İlin deniz seviyesinden yüksekliği 1.021 m ve yüzölçümü 13.927 km²’dir. İlde genellikle
+karasal iklim hüküm sürer. Kışları soğuk, yazları kurak ve sıcaktır. Merkez ilçeyle birlikte toplam
+18 ilçeye sahiptir. Afyonkarahisar İli, coğrafi açıdan Türkiye’nin önemli bir geçiş bölgesinde yer
+almaktadır. Afyonkarahisar üzerinden Ankara, İstanbul, İzmir ve Antalya gibi büyük şehirlerin
+diğerşehirlerle ve iç bölgelerle bağlantısı sağlanmaktadır. Genel olarak şehir dağlık alanlar arasında
+yer alan ovalardan oluşmaktadır; yer yer akarsu vadileriyle yarılmış platolar mevcuttur. İl
+sınırlarının doğu ve kuzeydoğusunda Emir dağları, güneydoğusunda Karakuş ve Sultan dağları,
+batısında Ahırdağları yer almaktadır. Afyon Ovası, Sincanlı Ovası, Sandıklı Ovası, Çöl Ovası ve
+Şuhut Ovası ilin önemli ovalarıdır.
+        </p>
+        <p>
+            Eski Tunç Çağından itibaren birçok medeniyete ev sahipliği yapmıştır. Sandıklı Kusura
+Höyüğünde yapılan kazılarında ve Hitit döneminde yerel kaplar, Frig döneminde Ana Tanrıça
+Kybele için kaya tapınakları, Roma döneminde yerel heykelcilik öne çıkan özelliklerindendir.
+Görülen bu özellikleriyle Afyonkarahisar’ın Anadolu’da bulunan diğer şehirler için bir köprü
+görevi üstlendiği görülmektedir.
+        </p>
+        <p>
+            Bu nedenledir ki Anadolu’nun bütünlüğünü ele geçirmek veya korumak için yapılan büyük
+savaşlardan İpsos (M.Ö.301), Miryekefelon (1176), Büyük Taarruz (1922) Afyonkarahisar
+topraklarında yapılmıştır. Türkiye Cumhuriyeti Devletinin temeli Afyonkarahisar’da atılmış olup
+her dönem Anadolu’nun kilidi olmuştur.
+        </p>
+    </section>
+    <section id="kale">
+        <h3>Afyonkarahisar Kalesi</h3>
+        <p>
+            Afyonkarahisar şehir merkezinde, volkanik özellikli, yüksekliği 226 metre olan doğal bir
+kaya kütlesidir. M.Ö. 1350 yıllarında Hitit İmparatoru II. Murşil zamanında Arzava seferinde
+müstahkem mevki olarak kullanılmıştır. Kale önce Hapanuva, Roma ve Bizans dönemlerinde
+Akroenos, Selçuklular döneminden itibaren ise, Karahisar adını almıştır. Kale zirvesinde M.Ö.
+1200-700 tarihleri arasında Anadolu’da yaşamış olan Frigler dönemine ait kültür izlerine de
+rastlanmaktadır. Ana Tanrıça Kübele adına yapılmış tapınma yerleri ile 4 adet büyük sarnıç
+bulunmaktadır. Selçuklu Sultanı I. Alaaddin Keykubat zamanında Kale Dizdarı Bedrettin
+Gevhertaş tarafından kale surları onarılmıştır. Ayrıca Kale’ye lacivert çinileriyle tanınan küçük bir
+mescit ve saray yaptırılmıştır. 
+        </p>
+    </section>
+    <section id="arkeoloji">
+        <h3>Afyonkarahisar (Arkeoloji) Müzesi</h3>
+        <p>
+            Cumhuriyet’in ilk yıllarında Afyonkarahisar’da kurulan Âsar-ı Atika Muhipleri
+Cemiyeti’nin çabalarıyla Taş Medrese’de eski eserler toplanmaya başlanmış, 1931 yılında resmi
+“Müze Deposu”, 1933 yılında ise Müze Müdürlüğü haline getirilmiştir. Afyonrahasiar’da
+müzeciliğin gelişmesinde Süleyman Hilmi Gönçer ve Oğuz Güner’in çok büyük katkıları olmuştur.
+1933 yılından 1970 yılına kadar Taş Medrese’de karma müze (Arkeoloji ve Etnoğrafya) olarak
+hizmet veren kurum, 1971 yılında Konya yolu kavşağında, Arkeoloji Müzesi binasının yapılması
+ile yeni binaya taşınarak hizmet vermeye başlamıştır.</p>
+        <p>
+            Müzede, Taş ve Maden (kalkolitik) çağından Bizans çağına kadar Afyonkarahisar ve
+çevresinde bulunmuş olan arkeolojik eserler, kronolojik bir sıra esas alınarak sergilenmektedir.
+        </p>
+    </section>
+    <section id="zafer">
+        <h3>Zafer Müzesi</h3>
+        <p>
+            Afyonkarahisar şehrinin merkezinde bulunan Anıtpark’ın karşısında yer almaktadır. Müze
+binası, 1913-1914 yıllarında Belediye Başkanı Esbabzade Hüseyin Tevfik Efendi tarafından
+Belediye Hizmet Binası olarak yapılmıştır. İki katlı olan bina, kâgir olarak Ermeni ustalara
+yaptırılmıştır. 
+        </p>
+    </section>
+    <section id="mevlevihane">
+        <h3>Sultan Dîvânî Mevlevîhânesi</h3>
+        <p>
+            Anadolu’da kurulan ilk mevlevîhânelerdendir. İlk kuruluşu 13. yüzyıla kadar dayanır. Tarih
+boyunca birçok önemli icraata merkez olmuş Afyonkarahisar Mevlevîhânesi, Konya
+Mevlevîhânesinden sonra en önemli Mevlevîhânedir. Özellikle 16. yüzyılda Hz. Mevlânâ’nın
+yedinci kuşak torunlarından Sultan Dîvânî zamanında Mevlevîlik açısından çok önemli bir merkez
+olmuştur.Ayrıca başka Mevlevîhânelerde olmayan “40 Hatimli Şifalı Aşure”geleneği ilk defa
+burada başlamış ve birçok mevlevîhâneye buradan yayılmıştır.
+        </p>
+        <p>
+            Birkaç defa yangın geçirmiş olan Afyonkarahisar Mevlevîhânesi,1902’deki büyük
+yangından sonra tamamen yanmış ve bugünkü haline 1908’de kavuşmuştur
+        </p>
+        <p>
+            Bahçesinde Derviş Odaları, Matbah, Hamuşan (Mezarlık) bulunan mevlevîhâne, son olarak
+2008 yılında restore edilmiş ve 30 Aralık 2008 tarihinde “Sultan Dîvânî Mevlevîhâne Müzesi”
+olarak hizmete sunulan tarihî mekan, Afyonkarahisar Belediyesi bünyesinde hizmet vermektedir. 
+        </p>
+    </section>
+    <section id="ulu_camii">
+        <h3>Ulu Camii</h3>
+        <p>
+            Cami, dikdörtgene yakın yamuk planlı olup, 1272-77 yıllarında Sahipata Nusratüddin Hasan
+tarafından yaptırılmıştır. Dış duvarlar, kesme taş sıralıdır. Araları moloz taş ile örülmüştür. Üst örtü
+daha önce toprak damlı iken, son yıllarda yapılan onarımla yüksek pramidal çatı ile örtülerek üzeri
+çinko ile kaplanmıştır. Cami, beş sırada sekizerden kırk ahşap sütun üzerine oturtulmuştur. Ahşap
+sütunlar üzerine konan sütun başlıkları, çakma sarkıt ve baklava dilimlidir. Doğuya, batıya ve
+kuzeye açılan üç kapısı vardır. Doğuya bakan kapının üzerinde bir onarım yazıtı bulunur. Buna
+göre, Cami, Muzafferuddin Devle Bey’in oğlu Muinüddin İsa Bey tarafından H.742 (M.1341)
+yılında tamir ettirilmiştir. Ayrıca kuzeye açılan kapı üzerinde, Türkçe bir yazıt bulunur. Mihrap
+mermer olup, üç sıra kuşakla “Ayet-el Kürsi” yazılıdır. Selçuklu tarzı ahşap oymalı iki kanatlı
+minber kapısı ise Neccar Emir Hac Bey”in eseridir. Ahşap kirişler üzeri renkli kök boyayla
+geometrik ve bitkisel motifler işlenmiştir.
+        </p>
+    </section>
+    <section id="gap_camii">
+        <h3>Gedik Ahmet Paşa İmaret Camii</h3>
+        <p>
+            Afyonkarahisar Merkezinde bulunan cami, hamam ve medrese ile beraber bir külliye
+oluşturur. Fatih Sultan Mehmet’in vezirlerinden Gedik Ahmet Paşa tarafından Anadolu
+Beylerbeyliği döneminde (M. 1472) Mimar Ayaz Ağa’ya yaptırılmıştır. Halk arasında “İmaret
+Camii” adıyla anılır. Orta kısımdan kemerle bölünmüş, art arda iki büyük kubbe ile örtülüdür. İki
+yanda sıralanan ve dışarı açılan odaları ise, üçer küçük kubbe örter. Kuzeydeki son cemaat yeri, altı
+yuvarlak sütunlu ve beş sivri kemerli kubbe ile örtülüdür. Doğu, batı ve kuzey duvarlarında iki,
+kıble duvarında üç sıra pencere vardır. Cami’nin duvarları içten kalem işi yazı ve geometrik
+desenlerle, üst pencereler ise renkli camlarla süslüdür. Nakışları Abdüssamed oğlu Hasan
+yapmıştır. Tek şerefeli minaresi, yivli burma biçimlerle süslü olup, yivlerin arası lacivert renkli sırlı
+tuğlalarla kaplıdır. 1940 yıllarında Vakıflar İdaresi’nce restore edilmiş, camide bulunan hatlar ise,
+eski özelliğini bozmadan İsmail Hakkı Altınbezer tarafından yazılmış, Avni usta tarafından
+uygulanmıştır.
+        </p>
+    </section>
+    <section id="mevlevi_camii">
+        <h3>Mevlevi (Türbe) Camii</h3>
+        <p>
+            Afyonkarahisar merkez Mevlana Mahallesi’ndedir. Halk arasında “Türbe” veya “Mevlevi
+Camii” isimleriyle de anılır. Caminin ana bölümleri; türbe, semahane, mescid, şerbethane, bacılar
+mahfili ve son cemaat yerinden oluşur. Ayrıca, derviş hücreleri, matbah-ı şerif, selamlık dairesi,
+mezarlık ve harem daireleri bulunmakta ise de, bugün selamlık, mezarlık ve harem daireleri mevcut
+değildir. Binanın kesme taştan yapılmış kapısı üzerinde, kitabe yerine kabartma bir Mevlevi külahı
+yer alır. Tek şerefeli minaresi bulunmaktadır. Büyük yangın sonucu yanan Mevlevihane, 1905’de
+II. Abdülhamit’in emriyle on dört bin altın harcanarak büyük bir onarım görmüştür. Kuzeye bakan
+cümle kapısından merdivenlerle çıkıldıktan sonra dedelerin hücreleriyle çevrili, ortasında şadırvan
+bulunan büyük bir avluya girilir. Eskiden Mevlevihane’nin doğusunda bulunan şeyh evi yangından
+sonra yıkılmıştır. Kapının sağındaki mutfağın bir bölümünde çilehane yer alır. Kasnağındaki renkli
+camlı pencereleriyle büyük kubbe, örtü sistemini oluşturur. Semahanenin doğusundaki şerbethanenin üst katında semahaneye bakan, kafeslerle çevrili kadınlar mahfili vardır. Semahanenin sol
+tarafı türbe bölümüdür. Türbede Mevlevi Şeyhlerine ait 12 sanduka bulunmaktadır. Mevlana’nın
+torunlarından Aba Puş-i Veli, Sultan Divani (Mehmet Semai Çelebi), Hızır Şah Çelebi gibi
+Mevlevi büyükleri ile Şah İsmail’in oğlu Elkas Mirza da burada yatmaktadır. Günümüzde cami
+olarak kullanılan yapıyı son olarak Mimar Arif Turunç tamir ettirmiştir. Afyonkarahisar
+mevlevihanesi’nin, tekkelerin kapatılmasından önce diğer Mevlevihaneler arasında ayrı bir yeri
+vardı. Semahane, matbah ve öbür bölümleriyle birlikte büyük bir mevlevihanedir. Mevlevilik’te
+Konya’dan sonra ikinci sırayı alır. 
+        </p>
+        <small id="citation">
+            Kaynak: 
+            <a href="http://www.afyonkarahisar.gov.tr/kurumlar/afyonkarahisar.gov.tr/Dosyalar/afyonkarahisar-turkce-ingilizce-tanitim.pdf"
+                >Afyonkarahisar Valiliği</a
+            >
+        </small>
+    </section>
+</div>
+<script>
+	mapboxgl.accessToken = 'pk.eyJ1IjoiZGVtaXJlbGxpZSIsImEiOiJja2w0eW80NGsweXpjMnFtbnI4aGlhemlzIn0.HV4ZGSplE5Ge_tzpoRab-Q';
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [30.540444635342922, 38.753890592347794],
+        zoom: 11.5,
+        bearing: 27,
+        pitch: 45
+    });
+
+    var chapters = {
+        'merkez': {
+            bearing: 27,
+            center: [30.540444635342922, 38.753890592347794],
+            zoom: 11.5,
+            pitch: 20
+        },
+        'kale': {
+            duration: 6000,
+            center: [30.53165506000814, 38.75707752001487],
+            bearing: 150,
+            zoom: 15,
+            pitch: 0
+        },
+        'arkeoloji': {
+            bearing: 90,
+            center: [30.550554510922662, 38.7478867348327],
+            zoom: 15,
+            speed: 0.6,
+            pitch: 40
+        },
+        'zafer': {
+            bearing: 90,
+            center: [30.53843781890381,38.75814385117436],
+            zoom: 15
+        },
+        'mevlevihane': {
+            bearing: 45,
+            center: [30.533628099279586,38.75391161693471],
+            zoom: 17,
+            pitch: 20,
+            speed: 0.5
+        },
+        'ulu_camii': {
+            bearing: 180,
+            center: [30.529732926265655, 38.75513384603182],
+            zoom: 15.6
+        },
+        'gap_camii': {
+            bearing: 90,
+            center: [30.54043326859435, 38.75407131558644],
+            zoom: 17.3,
+            pitch: 40
+        },
+        'mevlevi_camii': {
+            bearing: 90,
+            center: [30.53360028393696, 38.75367231613237],
+            zoom: 16.7,
+            pitch: 20
+        }
+    };
+
+    // On every scroll event, check which element is on screen
+    window.onscroll = function () {
+        var chapterNames = Object.keys(chapters);
+        for (var i = 0; i < chapterNames.length; i++) {
+            var chapterName = chapterNames[i];
+            if (isElementOnScreen(chapterName)) {
+                setActiveChapter(chapterName);
+                break;
+            }
+        }
+    };
+
+    var activeChapterName = 'merkez';
+    function setActiveChapter(chapterName) {
+        if (chapterName === activeChapterName) return;
+
+        map.flyTo(chapters[chapterName]);
+
+        document.getElementById(chapterName).setAttribute('class', 'active');
+        document.getElementById(activeChapterName).setAttribute('class', '');
+
+        activeChapterName = chapterName;
+    }
+
+    function isElementOnScreen(id) {
+        var element = document.getElementById(id);
+        var bounds = element.getBoundingClientRect();
+        return bounds.top < window.innerHeight && bounds.bottom > 0;
+    }
+</script>
+
+</body>
+</html>
